@@ -20,12 +20,12 @@
     header img {
       display: block;
       margin: 0 auto 15px auto;
-      width: 150px; /* tamaño del logo */
+      width: 150px; /* tamaÃ±o del logo */
       border-radius: 10px; /* esquinas redondeadas */
       border: 3px solid #81d4fa; /* borde azul claro */
     }
     nav {
-      background-color: #00695c; /* verde más claro */
+      background-color: #00695c; /* verde mÃ¡s claro */
       padding: 10px;
       text-align: center;
     }
@@ -75,27 +75,27 @@
     <!-- Logo -->
     <img src="logo.png" alt="Logo RADIO ADH SAUCE DE LUNA">
     <h1>RADIO ADH SAUCE DE LUNA</h1>
-    <p>Transmitiendo de manera portátil desde móvil y/o laptop</p>
-    <p>En vivo de 08:00 AM a 14:00 PM</p>
+    <p>Transmitiendo de manera portatil desde movil y/o laptop</p>
+    <p>En vivo de 08:00 AM a 14:00 PM y de 20:00 a 02:00 AM</p>
     <!-- Contador de visitas -->
     <p>Visitas: <span id="contador">0</span></p>
   </header>
 
   <nav>
     <a href="#">Inicio</a>
-    <a href="#">Programación</a>
+    <a href="#">Programacion</a>
     <a href="#">Contacto</a>
   </nav>
 
   <main>
-    <h2>Escúchanos en vivo</h2>
+    <h2>EscÃºchanos en vivo</h2>
     <div class="player">
       <!-- Reproductor de Caster.fm -->
       <div data-type="newStreamPlayer" data-publicToken="af5ff962-402a-4f0c-8c61-a45d55fd36fb" data-theme="dark" data-color="e81e4d" class="cstrEmbed"></div>
       <script src="//cdn.cloud.caster.fm//widgets/embed.js"></script>
       <iframe src="https://player.caster.fm/tuestacion" width="300" height="150" frameborder="0" scrolling="no"></iframe>
       
-      <!-- Botón de Like -->
+      <!-- BotÃ³n de Like -->
       <div class="like-button">
         <button onclick="sumarLike()">?? Me gusta <span id="likes">0</span></button>
       </div>
@@ -127,14 +127,14 @@
     localStorage.setItem("visitas", visitas);
     document.getElementById("contador").innerText = visitas;
 
-    // Botón de Like
+    // BotÃ³n de Like
     let likes = 0;
     function sumarLike() {
       likes++;
       document.getElementById("likes").innerText = likes;
     }
 
-    // Panel de chat (simulado en la misma página)
+    // Panel de chat (simulado en la misma pÃ¡gina)
     function enviarComentario() {
       let mensaje = document.getElementById("mensaje").value;
       if(mensaje.trim() !== "") {
@@ -148,3 +148,4 @@
   </script>
 </body>
 </html>
+

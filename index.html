@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>RADIO ADH SAUCE DE LUNA</title>
+  <style>
+    body {
+      background-color: #0b3d3d; /* azul oscuro verdoso */
+      color: #f0f0f0; /* texto claro */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #004d40; /* verde oscuro */
+      padding: 20px;
+      text-align: center;
+      color: #ffeb3b; /* amarillo llamativo */
+    }
+    nav {
+      background-color: #00695c; /* verde más claro */
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #81d4fa; /* azul claro */
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ffeb3b; /* amarillo al pasar el mouse */
+    }
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    .player {
+      margin: 20px auto;
+      border: 3px solid #81d4fa; /* borde azul claro */
+      padding: 10px;
+      background-color: #004d40; /* verde oscuro */
+      border-radius: 10px;
+      width: fit-content;
+    }
+    .like-button {
+      margin-top: 15px;
+    }
+    .chat-panel {
+      margin-top: 30px;
+      border: 2px solid #81d4fa;
+      border-radius: 10px;
+      padding: 15px;
+      background-color: #00695c;
+      text-align: left;
+    }
+    footer {
+      background-color: #00695c;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>RADIO ADH SAUCE DE LUNA</h1>
+    <p>Transmitiendo de manera portatil desde movil y/o laptop</p>
+    <p>En vivo de 08:00 AM a 14:00 PM y de 22:00 PM a 02:00 AM</p>
+    <!-- Contador de visitas -->
+    <p>Visitas: <span id="contador">0</span></p>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Programacion</a>
+    <a href="#">Contacto airesdelahuella@gmail.com</a>
+  </nav>
+
+  <main>
+    <h2>Escuchanos en vivo</h2>
+    <div class="player">
+      <!-- Reproductor de Caster.fm -->
+      <div data-type="newStreamPlayer" data-publicToken="af5ff962-402a-4f0c-8c61-a45d55fd36fb" data-theme="dark" data-color="e81e4d" data-channelId="" data-rendered="false" class="cstrEmbed"><a href="https://www.caster.fm">Shoutcast Hosting</a></div>
+      <script src="//cdn.cloud.caster.fm//widgets/embed.js"></script>
+      <iframe src="https://player.caster.fm/tuestacion" width="300" height="150" frameborder="0" scrolling="no"></iframe>
+      
+      <!-- Botón de Like -->
+      <div class="like-button">
+        <button onclick="sumarLike()">?? Me gusta <span id="likes">0</span></button>
+      </div>
+    </div>
+
+    <!-- Panel de chat -->
+    <div class="chat-panel">
+      <h3>Sugerencias y comentarios</h3>
+      <textarea id="mensaje" rows="4" cols="50" placeholder="Escribe tu comentario..."></textarea><br>
+      <button onclick="enviarComentario()">Enviar</button>
+      <div id="comentarios"></div>
+    </div>
+
+    <!-- Enlaces a redes -->
+    <p>
+      <a href="https://www.facebook.com/airesdelahuella/" target="_blank">Facebook</a> | 
+      <a href="https://www.youtube.com/@airesdelahuella" target="_blank">YouTube</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 RADIO ADH SAUCE DE LUNA - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Contador de visitas (simulado en localStorage)
+    let visitas = localStorage.getItem("visitas") || 0;
+    visitas++;
+    localStorage.setItem("visitas", visitas);
+    document.getElementById("contador").innerText = visitas;
+
+    // Botón de Like
+    let likes = 0;
+    function sumarLike() {
+      likes++;
+      document.getElementById("likes").innerText = likes;
+    }
+
+    // Panel de chat (simulado en la misma página)
+    function enviarComentario() {
+      let mensaje = document.getElementById("mensaje").value;
+      if(mensaje.trim() !== "") {
+        let comentarios = document.getElementById("comentarios");
+        let nuevo = document.createElement("p");
+        nuevo.textContent = mensaje;
+        comentarios.appendChild(nuevo);
+        document.getElementById("mensaje").value = "";
+      }
+    }
+  </script>
+</body>
+</html>

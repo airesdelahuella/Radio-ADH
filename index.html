@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <img src="logo_nuevo-png" alt="Logo RADIO ADH SAUCE DE LUNA" width="120">
   <meta charset="UTF-8">
   <title>RADIO ADH SAUCE DE LUNA</title>
   <style>
@@ -18,7 +19,7 @@
       color: #ffeb3b; /* amarillo llamativo */
     }
     nav {
-      background-color: #00695c; /* verde más claro */
+      background-color: #00695c; /* verde mÃ¡s claro */
       padding: 10px;
       text-align: center;
     }
@@ -86,7 +87,7 @@
       <script src="//cdn.cloud.caster.fm//widgets/embed.js"></script>
       <iframe src="https://player.caster.fm/tuestacion" width="300" height="150" frameborder="0" scrolling="no"></iframe>
       
-      <!-- Botón de Like -->
+      <!-- BotÃ³n de Like -->
       <div class="like-button">
         <button onclick="sumarLike()">?? Me gusta <span id="likes">0</span></button>
       </div>
@@ -118,14 +119,14 @@
     localStorage.setItem("visitas", visitas);
     document.getElementById("contador").innerText = visitas;
 
-    // Botón de Like
+    // BotÃ³n de Like
     let likes = 0;
     function sumarLike() {
       likes++;
       document.getElementById("likes").innerText = likes;
     }
 
-    // Panel de chat (simulado en la misma página)
+    // Panel de chat (simulado en la misma pÃ¡gina)
     function enviarComentario() {
       let mensaje = document.getElementById("mensaje").value;
       if(mensaje.trim() !== "") {
@@ -139,3 +140,4 @@
   </script>
 </body>
 </html>
+

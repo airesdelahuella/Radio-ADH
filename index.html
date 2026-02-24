@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <img src="logo_nuevo-png" alt="Logo RADIO ADH SAUCE DE LUNA" width="120">
   <meta charset="UTF-8">
   <title>RADIO ADH SAUCE DE LUNA</title>
   <style>
@@ -18,8 +17,15 @@
       text-align: center;
       color: #ffeb3b; /* amarillo llamativo */
     }
+    header img {
+      display: block;
+      margin: 0 auto 15px auto;
+      width: 150px; /* tamaño del logo */
+      border-radius: 10px; /* esquinas redondeadas */
+      border: 3px solid #81d4fa; /* borde azul claro */
+    }
     nav {
-      background-color: #00695c; /* verde mÃ¡s claro */
+      background-color: #00695c; /* verde más claro */
       padding: 10px;
       text-align: center;
     }
@@ -66,28 +72,30 @@
 </head>
 <body>
   <header>
+    <!-- Logo -->
+    <img src="logo.png" alt="Logo RADIO ADH SAUCE DE LUNA">
     <h1>RADIO ADH SAUCE DE LUNA</h1>
-    <p>Transmitiendo de manera portatil desde movil y/o laptop</p>
-    <p>En vivo de 08:00 AM a 14:00 PM y de 22:00 PM a 02:00 AM</p>
+    <p>Transmitiendo de manera portátil desde móvil y/o laptop</p>
+    <p>En vivo de 08:00 AM a 14:00 PM</p>
     <!-- Contador de visitas -->
     <p>Visitas: <span id="contador">0</span></p>
   </header>
 
   <nav>
     <a href="#">Inicio</a>
-    <a href="#">Programacion</a>
-    <a href="#">Contacto airesdelahuella@gmail.com</a>
+    <a href="#">Programación</a>
+    <a href="#">Contacto</a>
   </nav>
 
   <main>
-    <h2>Escuchanos en vivo</h2>
+    <h2>Escúchanos en vivo</h2>
     <div class="player">
       <!-- Reproductor de Caster.fm -->
-      <div data-type="newStreamPlayer" data-publicToken="af5ff962-402a-4f0c-8c61-a45d55fd36fb" data-theme="dark" data-color="e81e4d" data-channelId="" data-rendered="false" class="cstrEmbed"><a href="https://www.caster.fm">Shoutcast Hosting</a></div>
+      <div data-type="newStreamPlayer" data-publicToken="af5ff962-402a-4f0c-8c61-a45d55fd36fb" data-theme="dark" data-color="e81e4d" class="cstrEmbed"></div>
       <script src="//cdn.cloud.caster.fm//widgets/embed.js"></script>
       <iframe src="https://player.caster.fm/tuestacion" width="300" height="150" frameborder="0" scrolling="no"></iframe>
       
-      <!-- BotÃ³n de Like -->
+      <!-- Botón de Like -->
       <div class="like-button">
         <button onclick="sumarLike()">?? Me gusta <span id="likes">0</span></button>
       </div>
@@ -119,14 +127,14 @@
     localStorage.setItem("visitas", visitas);
     document.getElementById("contador").innerText = visitas;
 
-    // BotÃ³n de Like
+    // Botón de Like
     let likes = 0;
     function sumarLike() {
       likes++;
       document.getElementById("likes").innerText = likes;
     }
 
-    // Panel de chat (simulado en la misma pÃ¡gina)
+    // Panel de chat (simulado en la misma página)
     function enviarComentario() {
       let mensaje = document.getElementById("mensaje").value;
       if(mensaje.trim() !== "") {
@@ -140,4 +148,3 @@
   </script>
 </body>
 </html>
-
